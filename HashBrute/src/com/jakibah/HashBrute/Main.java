@@ -2,9 +2,12 @@ package com.jakibah.HashBrute;
 
 import java.security.NoSuchAlgorithmException;
 
-public class Main implements Runnable{
-	
+import javax.swing.JFrame;
+
+public class Main implements Runnable {
+
 	private static boolean running = false;
+	private JFrame MainFrame = new JFrame();
 
 	public static void main(String[] args) {
 		Thread MainThread = new Thread(new Main());
@@ -13,24 +16,20 @@ public class Main implements Runnable{
 
 	}
 
-	public static void Stop(){
+	public static void Stop() {
 		running = false;
 	}
-	
+
 	@Override
 	public void run() {
 		running = true;
-		
-		while(running){
-			
-			try {
-				System.out.println(Crypters.Encrypt("test123"));
-			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-			}
-			
+
+		while (running) {
+
+			//System.out.println(Crypters.Encrypt("test123", true));
+			//Crypters.Decrypt("test123");
 		}
-		
+
 	}
 
 }
