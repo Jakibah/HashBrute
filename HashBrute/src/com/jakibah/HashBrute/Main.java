@@ -7,9 +7,9 @@ public class Main implements Runnable{
 	private static boolean running = false;
 
 	public static void main(String[] args) {
-		Thread Main = new Thread(new Main());
-		Main.setName("main");
-		Main.start();
+		Thread MainThread = new Thread(new Main());
+		MainThread.setName("main");
+		MainThread.start();
 
 	}
 
