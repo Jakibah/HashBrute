@@ -26,8 +26,8 @@ public class Main implements Runnable {
 
 		while (running) {
 
-			//System.out.println(Crypters.Encrypt("test123", true));
-			//Crypters.Decrypt("test123");
+			//Crypters.Encrypt("jew", true);
+			//Crypters.Decrypt("505c8383fd19e8fd720a777738a57a1");
 		}
 
 	}
