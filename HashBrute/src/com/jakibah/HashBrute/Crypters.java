@@ -59,7 +59,7 @@ public class Crypters {
 		
 		if (hash.equals(encrypted)) {
 			System.out.println("Hash: " + hash + " is equal to String: "+lines.get(gen));
-			Main.Output.setText("Decrypted Succefully result can be found in output file!");
+			Main.Output.setText("Decrypted Succesfully result can be found in output file!");
 			Main.Stop();
 
 		} else {

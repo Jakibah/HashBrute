@@ -48,7 +48,7 @@ public class Main implements Runnable, ActionListener {
 		MainFrame.getContentPane().add(StartButton);
 		StartButton.addActionListener(this);
 		/////////////////
-		Main.Output.setText("Decrypted Succefully result can be found in output file!");
+		Main.Output.setText("Decrypted Succesfully result can be found in output file!");
 		
 		MainFrame.pack();
 		Main.Output.setText("");
