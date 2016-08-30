@@ -48,11 +48,14 @@ public class Main implements Runnable, ActionListener {
 		MainFrame.getContentPane().add(StartButton);
 		StartButton.addActionListener(this);
 		/////////////////
+		Main.Output.setText("Decrypted Succefully result can be found in output file!");
+		
 		MainFrame.pack();
+		Main.Output.setText("");
 		MainFrame.setVisible(true);
 	}
 	public static void Failed(){
-		Output.setText("Decryption failed we can not decrypt this hash");
+		Output.setText("Decryption failed we can not decrypt this hash.");
 	}
 	public void OnClose(){
 		
@@ -74,13 +77,11 @@ public class Main implements Runnable, ActionListener {
 		StartButton.setEnabled(false);
 		while (running) {
 
-			System.out.println("Debugging...");
+			
 			Output.setText("Decrypting...");
-			MainFrame.pack();
-			//Crypters.Encrypt("jew", true);
-			//Crypters.Decrypt(Input.getText());
-			//Crypters.Decrypt("505c8383fd19e8fd720a777738a57a1");
-			Crypters.Decrypt(Output.getText().toString());
+			Crypters.Decrypt(Input.getText());
+			
+			
 		}
 		
 		OnClose();
