@@ -37,7 +37,7 @@ public class Crypters {
 
 	public static void Decrypt(String hash) {
 		List<String> lines = null;
-
+		System.out.println(gen);
 		if (!list.exists()) {
 			try {
 				list.createNewFile();
