@@ -1,5 +1,8 @@
 package com.jakibah.HashBrute;
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -28,8 +31,14 @@ public class Crypters {
 		String encrypted = new BigInteger(1, md.digest()).toString(16);
 		if (CloseAfterThis) {
 			Encrypter.Stop();
-			Encrypter.Output.setText(encrypted);
+			Encrypter.Output.setText(encrypted + " Added to clipboard");
 			System.out.println(encrypted);
+			
+			String tocopy = encrypted;
+			StringSelection stringSelection = new StringSelection(tocopy);
+			Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+			clpbrd.setContents(stringSelection, null);
+			
 			return encrypted;
 		} else {
 			return encrypted;
@@ -59,7 +68,13 @@ public class Crypters {
 
 		if (hash.equals(encrypted)) {
 			System.out.println("Hash: " + hash + " is equal to String: " + lines.get(gen));
-			Decrypter.Output.setText(lines.get(gen));
+			Decrypter.Output.setText(lines.get(gen) + " Added to clipboard");
+			
+			String tocopy = lines.get(gen);
+			StringSelection stringSelection = new StringSelection(tocopy);
+			Clipboard clpbrd = Toolkit.getDefaultToolkit().getSystemClipboard();
+			clpbrd.setContents(stringSelection, null);
+			
 			Decrypter.Stop();
 
 		} else {
