@@ -27,7 +27,8 @@ public class Crypters {
 		md.update(s.getBytes(), 0, s.length());
 		String encrypted = new BigInteger(1, md.digest()).toString(16);
 		if (CloseAfterThis) {
-			Main.Stop();
+			Encrypter.Stop();
+			Encrypter.Output.setText(encrypted);
 			System.out.println(encrypted);
 			return encrypted;
 		} else {
@@ -54,22 +55,21 @@ public class Crypters {
 			e.printStackTrace();
 		}
 
-		
 		String encrypted = Encrypt(lines.get(gen), false);
-		
+
 		if (hash.equals(encrypted)) {
-			System.out.println("Hash: " + hash + " is equal to String: "+lines.get(gen));
-			Main.Output.setText("Decrypted Succesfully result can be found in output file!");
-			Main.Stop();
+			System.out.println("Hash: " + hash + " is equal to String: " + lines.get(gen));
+			Decrypter.Output.setText(lines.get(gen));
+			Decrypter.Stop();
 
 		} else {
 			if (gen < lines.size() - 1) {
 				gen++;
-				
+
 			} else {
 				System.out.println("Failed!!!");
-				Main.Failed();
-				Main.Stop();
+				Decrypter.Failed();
+				Decrypter.Stop();
 			}
 
 		}
